@@ -14,6 +14,7 @@ import ComedyNights from './pages/ComedyNights';
 import UserProfile from './pages/UserProfile';
 import LandingPage from './pages/LandingPage';
 import ChatBot from './pages/ChatBot';
+import ProtectedRoute from './pages/ProtectedRoute';
 
 const App = () => {
   const location = useLocation();
@@ -23,17 +24,17 @@ const App = () => {
     <>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/dashboardPage" element={<DashboardPage />} />
-        <Route path="/dashboardorg" element={<OrganizerDashboard />} />
+        <Route path="/dashboardPage" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
+        <Route path="/dashboardorg" element={<ProtectedRoute><OrganizerDashboard /></ProtectedRoute>} />
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/comedy" element={<ComedyNights />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/create-event" element={<EventForm />} />
-        <Route path="/rsvp" element={<RSVPPage />} />
-        <Route path="/events" element={<EventsPage />} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/user" element={<UserProfile />} />
-        <Route path="/calendar-reminders" element={<CalendarReminders />} />
+        <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+        <Route path="/create-event" element={<ProtectedRoute><EventForm /></ProtectedRoute>} />
+        <Route path="/rsvp" element={<ProtectedRoute><RSVPPage /></ProtectedRoute>} />
+        <Route path="/events" element={<ProtectedRoute><EventsPage /></ProtectedRoute>} />
+        <Route path="/payment" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
+        <Route path="/user" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
+        <Route path="/calendar-reminders" element={<ProtectedRoute><CalendarReminders /></ProtectedRoute>} />
       </Routes>
 
       {/* ✅ Show chatbot except on specific routes */}
