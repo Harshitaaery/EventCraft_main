@@ -90,7 +90,7 @@ const EventForm = () => {
   }
 
   try {
-    const response = await fetch('http://eventcraft-bj8y.onrender.com/api/events', {
+    const response = await fetch('https://eventcraft-backend-production.up.railway.app/api/events', {
       method: 'POST',
       body: data,
     });

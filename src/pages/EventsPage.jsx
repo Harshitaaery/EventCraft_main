@@ -30,14 +30,14 @@ const EventsPage = () => {
   useEffect(() => {
     const fetchCustomEvents = async () => {
       try {
-        const res = await axios.get('http://eventcraft-bj8y.onrender.com/api/events');
+        const res = await axios.get('https://eventcraft-backend-production.up.railway.app/api/events');
         const transformed = res.data.map((e, index) => ({
           id: 1000 + index,
           name: e.title,
           date: `${e.date} ${e.time}`,
           location: e.location,
           price: parseFloat(e.price),
-          image: `http://eventcraft-bj8y.onrender.com/uploads/${e.posterImage}`,
+          image: `https://eventcraft-backend-production.up.railway.app/uploads/${e.posterImage}`,
         }));
         setCustomEvents(transformed);
       } catch (error) {
