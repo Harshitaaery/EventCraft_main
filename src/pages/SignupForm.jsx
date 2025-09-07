@@ -42,7 +42,8 @@ const SignupForm = () => {
     }
 
     try {
-      const baseURL = "https://eventcraft-backend-3.onrender.com/api";
+      // ✅ Fixed baseURL to point to /api
+      const baseURL = "https://eventcraft-backend-production.up.railway.app/api";
       let endpoint = "";
       let payload = {};
 
